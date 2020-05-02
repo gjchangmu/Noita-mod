@@ -1,0 +1,1 @@
+DamageTakenMultiplier = 0.5

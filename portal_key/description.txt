@@ -1,0 +1,5 @@
+There is one key in each main biome. You need to find it to enter the portals at the bottom of the biomes. 
+
+This adds some more exploration vibe to the game.
+
+In rare cases a key may not spawn in a biome. In those cases the portals at the bottom of the biome will not require a key.

@@ -1,0 +1,8 @@
+	<Mod
+		name="Half Damage Taken"
+		description="All damages you take are halved."
+		tags="cheats"
+		dont_upload_folders=".git"
+		dont_upload_files=""
+	> 
+	</Mod>

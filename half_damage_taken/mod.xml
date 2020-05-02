@@ -1,0 +1,6 @@
+<Mod
+	name="Half Damage Taken"
+	description="All damages you take are halved."
+	request_no_api_restrictions="0" 
+>
+</Mod>

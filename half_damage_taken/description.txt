@@ -1,0 +1,3 @@
+All damages you take are halved (a multiplier of 0.5).
+
+You can change the multiplier value in "...\Steam\steamapps\workshop\content\881100\2076042167\config.lua" to change difficulty.
