@@ -1,0 +1,8 @@
+	<Mod
+		name="Adaptive Cursor Distance for Gamepad"
+		description="When you are using a gamepad to play, the aiming cursor will be at a distance adaptive to how far away the enemy you are aiming at is, instead of at a fixed distance."
+		tags="quality of life,graphics"
+		dont_upload_folders=".git"
+		dont_upload_files=""
+	> 
+	</Mod>
