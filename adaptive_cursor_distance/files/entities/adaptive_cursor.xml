@@ -1,0 +1,18 @@
+<Entity name="adaptive_cursor">
+
+<SpriteComponent
+	image_file="mods/adaptive_cursor_distance/files/entities/adaptive_cursor.png"
+	offset_x="6.3"
+	offset_y="10.7"
+	z_index="-256"
+	has_special_scale="0"
+	emissive="1"
+>
+</SpriteComponent>
+
+<LuaComponent
+	script_source_file="mods/adaptive_cursor_distance/files/scripts/update_adaptive_cursor.lua"
+>
+</LuaComponent>
+
+</Entity>
