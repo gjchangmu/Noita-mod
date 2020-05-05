@@ -10,5 +10,5 @@ local biomes = {
 }
 
 for i, v in ipairs(biomes) do
-	ModLuaFileAppend("data/scripts/biomes/"..v..".lua","mods/portal_key/files/data/scripts/"..v..".lua")
+	ModLuaFileAppend("data/scripts/biomes/"..v..".lua","mods/less_enemies/files/data/scripts/"..v..".lua")
 end
