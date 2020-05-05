@@ -28,7 +28,7 @@ for i, enemy in ipairs(enemies) do
 		eyv = eyv / ed
 		local eda2 = (exv - cxv) * (exv - cxv) + (eyv - cyv) * (eyv - cyv)
 		-- weighted average, using how close the enemy is to the aiming line as the weight
-		local w = 1.0 / (eda2 + 0.001) 
+		local w = 1.0 / (eda2 + 0.01) 
 		sumdw = sumdw + ed * w
 		sumw = sumw + w
 	end
@@ -50,7 +50,7 @@ MaxCursorDistance = MaxCursorDistance + (cxv * cameraxv + cyv * camerayv) * 0.45
 -- hard cap
 --if (d > MaxCursorDistance) then d = MaxCursorDistance end
 -- soft cap adaptive to whether the player is roughly pointing at enemies
-d = (d * sumw + MaxCursorDistance * 0.85) / (sumw + 0.85)
+d = (d * sumw * sumw + MaxCursorDistance * 8.5) / (sumw * sumw + 8.5)
 
 -- smoothing
 local mind_last = tonumber(GlobalsGetValue("mind_last", "0"))
