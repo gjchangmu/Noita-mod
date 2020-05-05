@@ -14,36 +14,47 @@ local cxym = math.sqrt(cxv * cxv + cyv * cyv)
 cxv = cxv / cxym
 cyv = cyv / cxym
 
-local minda2 = 1000
-local minenemyid = 0
-local mind = math.max(MaxCursorDistanceX, MaxCursorDistanceY)
+local sumdw = 0
+local sumw = 0
 local enemies = EntityGetWithTag("enemy")
 for i, enemy in ipairs(enemies) do
 	local ex, ey, erot, escale_x, escale_y = EntityGetTransform(enemy)
 	local exv = ex - x
 	local eyv = ey - y
-	local ed2 = exv * exv + eyv * eyv
+	local ed = math.sqrt(exv * exv + eyv * eyv)
 	
-	if (ed2 < mind * mind) then
-		local exym = math.sqrt(exv * exv + eyv * eyv)
-		exv = exv / exym
-		eyv = eyv / exym
+	if ed < math.max(MaxCursorDistanceX, MaxCursorDistanceY) then -- only consider enemies in close range
+		exv = exv / ed
+		eyv = eyv / ed
 		local eda2 = (exv - cxv) * (exv - cxv) + (eyv - cyv) * (eyv - cyv)
-		if eda2 < 0.2 and eda2 < minda2 then 
-			minda2 = eda2 
-			minenemyid = enemy
-			mind = math.sqrt(ed2)
-		end
+		-- weighted average, using how close the enemy is to the aiming line as the weight
+		local w = 1.0 / (eda2 + 0.001) 
+		sumdw = sumdw + ed * w
+		sumw = sumw + w
 	end
 end
 
-mind = mind - 10
-if mind < 20 then mind = 20 end
-local MaxCursorDistance = (MaxCursorDistanceX * math.abs(cxv) + MaxCursorDistanceY * math.abs(cyv)) / (math.abs(cxv) + math.abs(cyv))
-if (mind > MaxCursorDistance) then mind = MaxCursorDistance end
+local d = 999
+if sumw > 0 then d = sumdw / sumw - 10 end
+if d < 20 then d = 20 end
 
+-- ellipse-shaped max allowed cursor distance
+local MaxCursorDistance = (MaxCursorDistanceX * math.abs(cxv) + MaxCursorDistanceY * math.abs(cyv)) / (math.abs(cxv) + math.abs(cyv))
+
+-- max allowed cursor distance adaptive to camera position
+local camerax, cameray = GameGetCameraPos()
+local cameraxv = camerax - x
+local camerayv = cameray - y
+MaxCursorDistance = MaxCursorDistance + (cxv * cameraxv + cyv * camerayv) * 0.45
+
+-- hard cap
+--if (d > MaxCursorDistance) then d = MaxCursorDistance end
+-- soft cap adaptive to whether the player is roughly pointing at enemies
+d = (d * sumw + MaxCursorDistance * 0.85) / (sumw + 0.85)
+
+-- smoothing
 local mind_last = tonumber(GlobalsGetValue("mind_last", "0"))
-local showd = (mind * 0.2 + mind_last) / 1.2
+local showd = (d * 0.2 + mind_last) / 1.2
 GlobalsSetValue("mind_last", showd)
 
 EntitySetTransform(cursor, x + cxv * showd, y + cyv * showd)
