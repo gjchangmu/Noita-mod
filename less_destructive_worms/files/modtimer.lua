@@ -9,11 +9,7 @@ for i, enemy in ipairs(enemies) do
 		local cecomp = EntityGetFirstComponent(enemy, "CellEaterComponent")
 		
 		if cecomp ~= nil then
-			if WormDestrictionAbility == 0 then
-				EntitySetComponentIsEnabled(enemy, cecomp, false)
-			elseif WormDestrictionAbility == 1 then
-				ComponentSetMetaCustom( cecomp, "ignored_material", "templebrick_static,templebrick_static_soft,templebrick_noedge_static,templebrick_thick_static,templebrick_thick_static_noedge,templebrick_box2d" )
-			end
+			EntitySetComponentIsEnabled(enemy, cecomp, false)
 		end
 
 		--EntityAddTag(enemy, "mod_ldw_neutered")
