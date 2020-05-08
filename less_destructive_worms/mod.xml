@@ -1,0 +1,6 @@
+<Mod
+	name="Less Destructive Worms"
+	description="Worms and spiders do not destroy terrain."
+	request_no_api_restrictions="0" 
+>
+</Mod>

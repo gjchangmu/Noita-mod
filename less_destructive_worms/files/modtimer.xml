@@ -1,0 +1,9 @@
+<Entity name="modtimer">
+
+<LuaComponent
+	script_source_file="mods/less_destructive_worms/files/modtimer.lua"
+	execute_every_n_frame="10"
+>
+</LuaComponent>
+
+</Entity>

@@ -1,6 +1,0 @@
-<Mod
-	name="No Worms"
-	description="Worms do not spawn."
-	request_no_api_restrictions="0" 
->
-</Mod>
