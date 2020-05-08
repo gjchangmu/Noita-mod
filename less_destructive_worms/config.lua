@@ -1,0 +1,1 @@
+WormDestrictionAbility = 0
