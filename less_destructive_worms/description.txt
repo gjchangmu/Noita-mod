@@ -1,0 +1,1 @@
+Worms and spiders do not destroy terrain, thus do not enrage gods.

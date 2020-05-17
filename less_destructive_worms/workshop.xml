@@ -1,0 +1,8 @@
+	<Mod
+		name="Worms Do Not Eat Terrain"
+		description="Worms and spiders do not destroy terrain."
+		tags="tweaks,cheats"
+		dont_upload_folders=".git"
+		dont_upload_files=""
+	> 
+	</Mod>
