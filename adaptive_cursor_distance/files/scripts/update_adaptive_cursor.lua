@@ -23,7 +23,7 @@ for i, enemy in ipairs(enemies) do
 	local eyv = ey - y
 	local ed = math.sqrt(exv * exv + eyv * eyv)
 	
-	if ed < math.max(MaxCursorDistanceX, MaxCursorDistanceY) then -- only consider enemies in close range
+	if ed < 250 then -- only consider enemies in close range
 		exv = exv / ed
 		eyv = eyv / ed
 		local eda2 = (exv - cxv) * (exv - cxv) + (eyv - cyv) * (eyv - cyv)
@@ -39,22 +39,23 @@ if sumw > 0 then d = sumdw / sumw - 10 end
 if d < 20 then d = 20 end
 
 -- ellipse-shaped max allowed cursor distance
-local MaxCursorDistance = (MaxCursorDistanceX * math.abs(cxv) + MaxCursorDistanceY * math.abs(cyv)) / (math.abs(cxv) + math.abs(cyv))
+local DefaultCursorDistance = (DefaultCursorDistanceX * math.abs(cxv) + DefaultCursorDistanceY * math.abs(cyv)) / (math.abs(cxv) + math.abs(cyv))
 
 -- max allowed cursor distance adaptive to camera position
 local camerax, cameray = GameGetCameraPos()
 local cameraxv = camerax - x
 local camerayv = cameray - y
-MaxCursorDistance = MaxCursorDistance + (cxv * cameraxv + cyv * camerayv) * 0.45
+DefaultCursorDistance = DefaultCursorDistance + (cxv * cameraxv + cyv * camerayv) * 0.45
 
--- hard cap
---if (d > MaxCursorDistance) then d = MaxCursorDistance end
 -- soft cap adaptive to whether the player is roughly pointing at enemies
-d = (d * sumw * sumw + MaxCursorDistance * 8.5) / (sumw * sumw + 8.5)
+d = (d * sumw * sumw + DefaultCursorDistance * 8.5) / (sumw * sumw + 8.5)
+-- hard cap
+local MaxCursorDistance = (MaxCursorDistanceX * math.abs(cxv) + MaxCursorDistanceY * math.abs(cyv)) / (math.abs(cxv) + math.abs(cyv))
+if (d > MaxCursorDistance) then d = MaxCursorDistance end
 
 -- smoothing
 local mind_last = tonumber(GlobalsGetValue("mind_last", "0"))
-local showd = (d * 0.2 + mind_last) / 1.2
+local showd = (d * 0.15 + mind_last) / 1.15
 GlobalsSetValue("mind_last", showd)
 
 EntitySetTransform(cursor, x + cxv * showd, y + cyv * showd)
