@@ -23,7 +23,7 @@ for i, enemy in ipairs(enemies) do
 	local eyv = ey - y
 	local ed = math.sqrt(exv * exv + eyv * eyv)
 	
-	if ed < 250 then -- only consider enemies in close range
+	if ed < 200 then -- only consider enemies in close range
 		exv = exv / ed
 		eyv = eyv / ed
 		local eda2 = (exv - cxv) * (exv - cxv) + (eyv - cyv) * (eyv - cyv)
