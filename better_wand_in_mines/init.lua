@@ -1,6 +1,12 @@
 
 local biomes = {
 	"coalmine",
+	"excavationsite",
+	"snowcave",
+	"snowcastle",
+	"rainforest",
+	"vault",
+	"crypt",
 }
 
 for i, v in ipairs(biomes) do
