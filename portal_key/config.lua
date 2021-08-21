@@ -1,1 +1,1 @@
-Portal_Key_Debug = 0
+Portal_Key_Debug = 1
