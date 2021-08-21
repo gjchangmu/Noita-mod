@@ -1,0 +1,20 @@
+<Entity name="adaptive_cursor">
+
+<SpriteComponent
+	image_file="mods/portal_key/files/data/entities/minor_key.png"
+	offset_x="6.3"
+	offset_y="10.7"
+	z_index="-256"
+	has_special_scale="0"
+	emissive="1"
+	alpha="0.2" 
+	scale="0.5"
+>
+</SpriteComponent>
+
+<LuaComponent
+	script_source_file="mods/portal_key/files/data/scripts/update_minor_key.lua"
+>
+</LuaComponent>
+
+</Entity>

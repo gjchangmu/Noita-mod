@@ -2,14 +2,12 @@
 	<!-- teleport logic -->
 <!--
 	<TeleportComponent
-		_tags="enabled_by_liquid"
 		target_x_is_absolute_position="1"
 		target.x="-677" 
 		target.y="280" 
 	></TeleportComponent>
 -->
 	<HitboxComponent 
-		_tags="enabled_by_liquid"
 		aabb_min_x="-15" 
 		aabb_min_y="-15"
 		aabb_max_x="15" 
@@ -28,13 +26,11 @@
 	<!-- gfx -->
 	
 	<UIInfoComponent
-		_tags="enabled_by_liquid"
 		name="$teleport_deeper"
 		>
 	</UIInfoComponent>
 
 	<LightComponent 
-		_tags="enabled_by_liquid"
 		_enabled="1" 
 		radius="255"
 		fade_out_time="1.5" 
@@ -45,7 +41,6 @@
 	></LightComponent>
 	
 	<LightComponent 
-		_tags="enabled_by_liquid"
 		_enabled="1" 
 		radius="64"
 		fade_out_time="1.5" 
@@ -56,7 +51,6 @@
 	></LightComponent>
 	
 	<ParticleEmitterComponent 
-		_tags="enabled_by_liquid"
 		emitted_material_name="spark_purple"
 		gravity.y="0.0"
 		lifetime_min="3"
@@ -85,7 +79,6 @@
 	</ParticleEmitterComponent>
 
 	<ParticleEmitterComponent 
-		_tags="enabled_by_liquid"
 		emitted_material_name="spark_purple"
 		gravity.y="0.0"
 		lifetime_min="3"
@@ -114,7 +107,6 @@
 	</ParticleEmitterComponent>
 
 	<SpriteComponent 
-		_tags="enabled_by_liquid"
 		image_file="data/buildings_gfx/teleport_center.xml" 
 		offset_x="0"
 		offset_y="0"
@@ -124,51 +116,17 @@
 	</SpriteComponent>
 
 	<AudioLoopComponent
-		_tags="enabled_by_liquid"
 		file="data/audio/Desktop/misc.bank"
 		event_name="misc/teleport_loop"
 		calculate_material_lowpass="0"
-		auto_play="0"
-		auto_play_if_enabled="1"
-		play_on_component_enable="1" >
+		auto_play="1" >
 	</AudioLoopComponent>
 
 	<AudioLoopComponent
-		_tags="enabled_by_liquid"
 		file="data/audio/Desktop/misc.bank"
 		event_name="misc/teleport_emitter_loop"
 		calculate_material_lowpass="0"
-		auto_play="0"
-		auto_play_if_enabled="1"
-		play_on_component_enable="1" >
+		auto_play="1" >
 	</AudioLoopComponent>
-
-	<!-- teleporter powered by teleportium beneath -->
-	<MaterialAreaCheckerComponent
-		area_aabb.min_x="-2" 
-		area_aabb.max_x="2" 
-		area_aabb.min_y="136"		
-		area_aabb.max_y="140"	
-		update_every_x_frame="60"
-		material="magic_liquid_teleportation"
-		material2="magic_liquid_unstable_teleportation"
-		look_for_failure="1"
-		kill_after_message="0">
-	</MaterialAreaCheckerComponent>
-	<MaterialAreaCheckerComponent
-		area_aabb.min_x="-2" 
-		area_aabb.max_x="2" 
-		area_aabb.min_y="136"		
-		area_aabb.max_y="140"	
-		update_every_x_frame="60"
-		material="magic_liquid_teleportation"
-		material2="magic_liquid_unstable_teleportation"
-		look_for_failure="0"
-		kill_after_message="0">
-	</MaterialAreaCheckerComponent>
-	<LuaComponent
-		script_material_area_checker_failed="data/scripts/buildings/teleport_liquid_check.lua"
-		script_material_area_checker_success="data/scripts/buildings/teleport_liquid_check.lua" >
-	</LuaComponent>
 
 </Entity>

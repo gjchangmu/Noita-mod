@@ -13,13 +13,13 @@ function collision_trigger( colliding_entity_id )
 	local keycc = tonumber(GlobalsGetValue("portalkeycountcumulated", "0"))
 	local pec = tonumber(GlobalsGetValue("portalenteredcountcumulated", "0"))
 	local keygc = 0
-	if pec >= 0 and tonumber(GlobalsGetValue("coalminekeygenerated", "0")) > 0 then keygc = keygc + 1 end
-	if pec >= 1 and tonumber(GlobalsGetValue("excavationsitekeygenerated", "0")) > 0 then keygc = keygc + 1 end
-	if pec >= 2 and tonumber(GlobalsGetValue("snowcavekeygenerated", "0")) > 0 then keygc = keygc + 1 end
-	if pec >= 3 and tonumber(GlobalsGetValue("snowcastlekeygenerated", "0")) > 0 then keygc = keygc + 1 end
-	if pec >= 4 and tonumber(GlobalsGetValue("rainforestkeygenerated", "0")) > 0 then keygc = keygc + 1 end
-	if pec >= 5 and tonumber(GlobalsGetValue("vaultkeygenerated", "0")) > 0 then keygc = keygc + 1 end
-	if pec >= 6 and tonumber(GlobalsGetValue("cryptkeygenerated", "0")) > 0 then keygc = keygc + 1 end
+	if pec >= 0 and tonumber(GlobalsGetValue("coalminekeygenerated", "0")) > 1 then keygc = keygc + 1 end
+	if pec >= 1 and tonumber(GlobalsGetValue("excavationsitekeygenerated", "0")) > 1 then keygc = keygc + 1 end
+	if pec >= 2 and tonumber(GlobalsGetValue("snowcavekeygenerated", "0")) > 1 then keygc = keygc + 1 end
+	if pec >= 3 and tonumber(GlobalsGetValue("snowcastlekeygenerated", "0")) > 1 then keygc = keygc + 1 end
+	if pec >= 4 and tonumber(GlobalsGetValue("rainforestkeygenerated", "0")) > 1 then keygc = keygc + 1 end
+	if pec >= 5 and tonumber(GlobalsGetValue("vaultkeygenerated", "0")) > 1 then keygc = keygc + 1 end
+	if pec >= 6 and tonumber(GlobalsGetValue("cryptkeygenerated", "0")) > 1 then keygc = keygc + 1 end
 	
 	if Portal_Key_Debug == 1 then 
 		GamePrint("pec=" .. pec)
@@ -28,13 +28,13 @@ function collision_trigger( colliding_entity_id )
 	
 	if (keyc == 0 and keycc == keygc) then
 		GamePrint("A key seems not have spawned. The portal opens itself for you")
-		if pec == 0 then GlobalsSetValue("coalminekeygenerated", "1") end
-		if pec == 1 then GlobalsSetValue("excavationsitekeygenerated", "1") end
-		if pec == 2 then GlobalsSetValue("snowcavekeygenerated", "1") end
-		if pec == 3 then GlobalsSetValue("snowcastlekeygenerated", "1") end
-		if pec == 4 then GlobalsSetValue("rainforestkeygenerated", "1") end
-		if pec == 5 then GlobalsSetValue("vaultkeygenerated", "1") end
-		if pec == 6 then GlobalsSetValue("cryptkeygenerated", "1") end
+		if pec == 0 then GlobalsSetValue("coalminekeygenerated", "2") end
+		if pec == 1 then GlobalsSetValue("excavationsitekeygenerated", "2") end
+		if pec == 2 then GlobalsSetValue("snowcavekeygenerated", "2") end
+		if pec == 3 then GlobalsSetValue("snowcastlekeygenerated", "2") end
+		if pec == 4 then GlobalsSetValue("rainforestkeygenerated", "2") end
+		if pec == 5 then GlobalsSetValue("vaultkeygenerated", "2") end
+		if pec == 6 then GlobalsSetValue("cryptkeygenerated", "2") end
 		GlobalsSetValue("portalkeycountcumulated", keycc+1)
 		keyc = 1
 	end
