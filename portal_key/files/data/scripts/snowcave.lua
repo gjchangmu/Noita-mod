@@ -20,7 +20,7 @@ table.insert(g_small_enemies, {
 			local keyg = tonumber(GlobalsGetValue("keygenerated3", "-1"))
 			if keyg < Key_Generated_Per_Boime_About then
 				GlobalsSetValue("keygenerated3", keyg + 1)
-				if Portal_Key_Debug == 1 then GamePrint(keyg+1 .. "Keys Generated (Snow Cave)") end
+				if Portal_Key_Debug == 1 then GamePrint(keyg+1 .. " Keys Generated (Snow Cave)") end
 				return true
 			else
 				--if Portal_Key_Debug == 1 then GamePrint("Denied (Snow Cave)") end

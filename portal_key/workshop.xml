@@ -1,6 +1,6 @@
 	<Mod
 		name="Portal Keys"
-		description="You need to find a key to enter the portals at the bottom of each biome."
+		description="You need to find keys to enter the portals at the bottom of each biome."
 		tags="game modes,gameplay"
 		dont_upload_folders=".git"
 		dont_upload_files=""

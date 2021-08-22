@@ -1,5 +1,15 @@
-There is one key in each main biome. You need to find it to enter the portals at the bottom of the biomes. 
+There are 2 keys in each main biome. You need to find at least 1 of them to enter the portals at the bottom of the biome. 
 
+In "...\Steam\steamapps\workshop\content\881100\2079254710\config.lua", you can configure:
+- an estimate of how many keys are there in each main biome (default is 2); 
+	* (more than 15 is not recommended)
+- how many keys are required to enter the portals in each main biome (default is 1);
+- whether the keys emit light in dark (default is true).
+	* (if you set 10 keys in each biome and 3 required to enter portals, no light emitting may also be fun)
+  
 This adds some more exploration vibe to the game.
 
-In rare cases a key may not spawn in a biome. In those cases the portals at the bottom of the biome will not require a key.
+Note: 
+- A key-shaped minor will hover around you as an indication that you have enough keys to enter the portals in the current biome when it's the case.
+- Keys are biome-specific. Keys found in one biome does not count for portals in another biome. 
+- In rare cases not enough keys may spawn in a biome. In those cases the portals at the bottom of the biome will still open for you if you collected all the keys in the biome.

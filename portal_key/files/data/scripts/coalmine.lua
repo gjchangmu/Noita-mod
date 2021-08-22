@@ -11,6 +11,7 @@ end
 local gsep = gsep_multiplier * Key_Generated_Per_Boime_About
 if gsep < gsep_min then gsep = gsep_min end
 if gsep > gsep_max then gsep = gsep_max end
+gsep = gsep * 2.0
 table.insert(g_small_enemies, {
 		prob   		= gsep,
 		min_count	= 1,
