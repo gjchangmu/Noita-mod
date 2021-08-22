@@ -1,0 +1,41 @@
+<Entity tags="hittable,teleportable_NOT">
+	
+	<VelocityComponent />
+
+	<SimplePhysicsComponent/>
+
+	<SpriteComponent 
+		_tags="enabled_in_world,character" 
+		alpha="1" 
+		image_file="mods/portal_key/files/data/entities/portal_key_item.png" 
+		next_rect_animation="" 
+		rect_animation="" 
+		offset_x="10"
+		offset_y="39"
+		z_index="20" >
+	</SpriteComponent>
+	
+	<HitboxComponent 
+		_tags="enabled_in_world"
+		aabb_min_x="-6" 
+		aabb_max_x="6" 
+		aabb_min_y="-8" 
+		aabb_max_y="0" 
+		is_enemy="0" 
+		is_item="1" 
+		is_player="0" >
+	</HitboxComponent>
+
+	<ItemComponent
+		item_name="Portal Key"
+		play_spinning_animation="0"
+		stats_count_as_item_pick_up="0"
+    	play_pick_sound="1"
+		auto_pickup="1" >
+	</ItemComponent>
+	
+	<LuaComponent
+		script_item_picked_up="mods/portal_key/files/data/scripts/key_pickup.lua"
+	></LuaComponent>
+  
+</Entity>
