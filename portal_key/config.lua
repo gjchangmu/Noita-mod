@@ -6,6 +6,6 @@ Key_Emit_Light = true
 Portal_Key_Debug = 1
 
 -- don't change the following values unless you understand them (I don't)
-gsep_min = 0.1
-gsep_max = 0.3
-gsep_multiplier = 0.03
+gsep_min = 0.05
+gsep_max = 0.2
+gsep_multiplier = 0.02

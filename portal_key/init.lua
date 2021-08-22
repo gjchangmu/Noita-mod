@@ -22,7 +22,7 @@ function OnPlayerSpawned( player_entity )
 	
 	--test: to spawn the player right beside the portal and give the player a key
 	--GlobalsSetValue("portalkeycount", 1)
-	--EntitySetTransform( player_entity, 1338, 1000 )
+	--EntitySetTransform( player_entity, -677, 10632 - 50 )
 	--EntitySetTransform( player_entity, 1338, 7200 ) -- shorter level before boss portal
 	--EntitySetTransform( player_entity, 1338, 12800 ) -- before boss portal
 	

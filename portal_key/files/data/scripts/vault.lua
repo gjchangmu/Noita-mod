@@ -10,6 +10,7 @@ end
 local gsep = gsep_multiplier * Key_Generated_Per_Boime_About
 if gsep < gsep_min then gsep = gsep_min end
 if gsep > gsep_max then gsep = gsep_max end
+gsep = gsep * 2
 table.insert(g_small_enemies, {
 		prob   		= gsep,
 		min_count	= 1,
@@ -19,7 +20,7 @@ table.insert(g_small_enemies, {
 			local keyg = tonumber(GlobalsGetValue("keygenerated6", "-1"))
 			if keyg < Key_Generated_Per_Boime_About then
 				GlobalsSetValue("keygenerated6", keyg + 1)
-				if Portal_Key_Debug == 1 then GamePrint("One Key Generated (Vault, g_small_enemies)") end
+				if Portal_Key_Debug == 1 then GamePrint(keyg+1 .. " Keys Generated (Vault)") end
 				return true
 			else
 				--if Portal_Key_Debug == 1 then GamePrint("Denied (Vault)") end
