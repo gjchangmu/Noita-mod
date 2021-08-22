@@ -1,7 +1,11 @@
 
-Key_Generated_Per_Boime_About = 5
-Key_Needed_To_Enter_Portal_Per_Boime = 2
+Key_Generated_Per_Boime_About = 10
+Key_Needed_To_Enter_Portal_Per_Boime = 3
 Key_Emit_Light = true
 
 Portal_Key_Debug = 1
-gsep = 100
+
+-- don't change the following values unless you understand them (I don't)
+gsep_min = 0.1
+gsep_max = 0.3
+gsep_multiplier = 0.03

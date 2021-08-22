@@ -7,12 +7,17 @@ function item_pickup( entity_item, entity_pickupper, item_name )
 	local boime = which_boime_im_in()
 	local portalkeycount_str = "portalkeycount" .. boime
 	local keyc = tonumber(GlobalsGetValue(portalkeycount_str, "0"))
-	GlobalsSetValue(portalkeycount_str, keyc + 1)
+	keyc = keyc + 1
+	GlobalsSetValue(portalkeycount_str, keyc)
 	
 	EntityKill( entity_item )
 	
+	GamePrint("Picked " .. keyc .. " keys. ")
+	
 	if Portal_Key_Debug == 1 then 
 		keyc = tonumber(GlobalsGetValue(portalkeycount_str, "0"))
-		GamePrint("boime=" .. boime .. ", keyc=" .. keyc) 
+		local keygenerated_str = "keygenerated" .. boime
+		local keygc = tonumber(GlobalsGetValue(keygenerated_str, "0"))
+		GamePrint("boime=" .. boime .. ", keyc=" .. keyc .. ", keygc=" .. keygc) 
 	end
 end

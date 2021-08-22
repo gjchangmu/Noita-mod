@@ -10,10 +10,10 @@ local x, y, rot, scale_x, scale_y = EntityGetTransform(player)
 local keyx, keyy, keyrot, keyscale_x, keyscale_y = EntityGetTransform(minor_key)
 local dx = x - keyx
 local dy = y - 30 - keyy
-dx = dx / 50.0
-dy = dy / 50.0
-if dx > 0.5 then dx = 0.5 end
-if dy > 0.5 then dy = 0.5 end
+dx = dx / 40.0
+dy = dy / 40.0
+if dx > 1.0 then dx = 1.0 end
+if dy > 1.0 then dy = 1.0 end
 
 -- the following block must be exactly the same as the logic in entering_portal.lua
 local boime = which_boime_im_in()

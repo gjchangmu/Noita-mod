@@ -7,6 +7,9 @@ else
 	keyitemstr = "mods/portal_key/files/data/entities/portal_key_item_nolight.xml"
 end
 
+local gsep = gsep_multiplier * Key_Generated_Per_Boime_About
+if gsep < gsep_min then gsep = gsep_min end
+if gsep > gsep_max then gsep = gsep_max end
 table.insert(g_small_enemies, {
 		prob   		= gsep,
 		min_count	= 1,
